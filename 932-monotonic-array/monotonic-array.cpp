@@ -2,17 +2,17 @@ class Solution {
 public:
     int n;
 
-    bool isMonotonic(vector<int>& a) {
-        n = a.size();
-        bool incr = false, decr = false;
+    bool isMonotonic(vector<int>& nums) {
+        n = nums.size();
+        bool inc = false, dec = false;
         for(int i=1; i<n; i++) {
-            if(a[i]-a[i-1] > 0) {
-                incr = true;
+            if(nums[i]-nums[i-1] > 0) {
+                inc = true;
             }
-            if(a[i]-a[i-1] < 0) {
-                decr = true;
+            if(nums[i]-nums[i-1] < 0) {
+                dec = true;
             }
-        }
-        return incr && !decr || decr && !incr || !incr && !decr;
+        }    
+        return inc && !dec || dec && !inc || !inc && !dec;
     }
 };
