@@ -8,7 +8,7 @@ public:
         for(int i=0; i<n; i++) {
             ans += d;
             if(end >= time[i]) {
-                ans -= (abs(end-time[i]) + 1);
+                ans -= (end-time[i] + 1);
             }
             end = time[i]+d-1;
         }
