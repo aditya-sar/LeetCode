@@ -12,7 +12,7 @@ public:
             for (int mx=1; mx<=m; mx++) {
                 for (int cost=1; cost<=k; cost++) {
                     dp[len][mx][cost] = 
-                    (static_cast<long long>(1) * mx * dp[len-1][mx][cost]) % mod;
+                    (static_cast<long long>(mx) * dp[len-1][mx][cost]) % mod;
 
                     dp[len][mx][cost] = 
                     (dp[len][mx][cost] + prefix[len-1][mx-1][cost-1]) % mod;             
