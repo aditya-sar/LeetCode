@@ -3,7 +3,7 @@ public:
     int minimumTime(int n, vector<vector<int>>& a, vector<int>& time) {
         unordered_map<int, vector<int>> graph;
         vector<int> dict(n+1, 0);
-        for(auto& v : a) {
+        for(vector<int> &v : a) {
             graph[v[0]].push_back(v[1]);
             dict[v[1]]++;
         }
