@@ -6,7 +6,7 @@ public:
         deque<int> dq;
         n = a.size();
         for(int i=0; i<n; ++i) {
-            a[i] += !dq.empty() ? a[dq.front()] : 0;
+            a[i] += dq.empty() ? 0 : a[dq.front()];
             while(!dq.empty() && (i - dq.front() >= k || a[i] >= a[dq.back()])) {
                 if (a[i] >= a[dq.back()]) {
                     dq.pop_back();
