@@ -9,8 +9,8 @@ public:
         sort(a.begin(), a.end());
         unordered_set<int> s(a.begin(), a.end());
         unordered_map<int, int> mp;
-        for(int x : a) {
-        	mp[x] = 1;
+        for(int i=0; i<n; i++) {
+        	mp[a[i]] = 1;
         }
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
@@ -21,7 +21,8 @@ public:
                     long long temp = (long long)mp[a[j]] * mp[a[i] / a[j]];
                     if (a[i] / a[j] == a[j]) {
                         mp[a[i]] = (mp[a[i]] + temp) % MOD;
-                    } else {
+                    } 
+                    else {
                         mp[a[i]] = (mp[a[i]] + temp * 2) % MOD;
                     }
                 }
