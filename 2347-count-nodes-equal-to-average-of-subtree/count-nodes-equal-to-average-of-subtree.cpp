@@ -21,7 +21,7 @@ public:
     }
 
     int averageOfSubtree(TreeNode* root) {
-        vector<int> ansV = solve(root);
+        solve(root);
         return ans;
     }
 };
