@@ -1,24 +1,23 @@
 class Solution {
 public:
-    vector<int> v;
+    int ans = INT_MAX;
 
-    void solve(TreeNode *root) {
-        v.push_back(root -> val);
+    void solve(TreeNode *root, int &prev) {
         if(root -> left) {
-            solve(root -> left);
+            solve(root -> left, prev);
         }
+        if(prev >= 0) {
+            ans = min(ans, root -> val - prev);
+        }
+        prev = root -> val;
         if(root -> right) {
-            solve(root -> right);
+            solve(root -> right, prev);
         }
     }
 
     int getMinimumDifference(TreeNode* root) {
-        solve(root);  
-        sort(v.begin(), v.end());
-        int ans = INT_MAX;
-        for(int i=1; i<v.size(); i++) {
-            ans = min(ans, v[i] - v[i-1]);
-        }
+        int prev = -1;
+        solve(root, prev);
         return ans;
     }
 };
