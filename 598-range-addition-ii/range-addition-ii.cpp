@@ -9,7 +9,6 @@ public:
             rowMin = min(v[0], rowMin);
             colMin = min(v[1], colMin);
         }
-        // cout << rowMin << endl << colMin;
-        return rowMin *colMin;
+        return rowMin * colMin;
     }
 };
