@@ -13,18 +13,13 @@ public:
                 count++;
             }
             else {
-                count %= mod;
                 ans += ((count)*(count + 1) / 2) % mod;
-                ans %= mod;
                 c = s[i];
                 count = 0;
                 i--;
             }
         }
-        count %= mod;
         ans += (count * (count + 1) / 2) % mod;
-        ans %= mod;
         return ans;
-        
     }
 };
