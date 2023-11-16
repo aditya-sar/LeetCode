@@ -29,13 +29,9 @@ public:
             }
             st.insert(dig);
         }    
-        for(auto it : st) {
-            cout << it << ' ';
-        }
         int len = pow(2, n);
         for(int i=0; i<len; i++) {
             if(st.find(i) == st.end()) {
-                cout << endl << i;
                 ans = binary(i, n);
                 break;
             }
