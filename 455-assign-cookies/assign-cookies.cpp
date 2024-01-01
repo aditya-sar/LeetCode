@@ -6,8 +6,8 @@ public:
         if(g.size() == 0 || s.size() == 0) {
             return 0;
         }
-        sort(g.begin(), g.end());
-        sort(s.begin(), s.end());
+        stable_sort(g.begin(), g.end());
+        stable_sort(s.begin(), s.end());
         int gPos = 0, sPos = 0;
         for(int i=0; i<g.size(); i++) {
             while(s[sPos] < g[i]) {
