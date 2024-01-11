@@ -13,7 +13,7 @@ public:
 
     void solve(TreeNode *node) {
         if(!node) {
-            return;
+            return; 
         }
         findMax(node, node -> val);
         solve(node -> left);
@@ -21,7 +21,6 @@ public:
     }
 
     int maxAncestorDiff(TreeNode* root) {
-        // starting from every node calculate all diff bet this node and child node
         solve(root);
         return ans;        
     }
