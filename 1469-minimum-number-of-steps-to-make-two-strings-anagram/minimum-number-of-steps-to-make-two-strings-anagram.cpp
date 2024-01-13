@@ -16,19 +16,5 @@ public:
             ans += abs(mp1[c] - mp2[c]);
         }
         return (ans >> 1);
-
-        // bab
-        // aba
-
-        // abb
-        // aab
-
-
-        // a = 1
-        // b = 2
-
-        // a = 1
-        // b = 2
-
     }
 };
