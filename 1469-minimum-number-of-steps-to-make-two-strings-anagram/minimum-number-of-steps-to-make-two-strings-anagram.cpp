@@ -15,8 +15,7 @@ public:
         for(char c='a'; c<='z'; c++) {
             ans += abs(mp1[c] - mp2[c]);
         }
-        ans = (ans >> 1);
-        return ans;
+        return (ans >> 1);
 
         // bab
         // aba
