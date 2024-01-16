@@ -1,8 +1,7 @@
 class RandomizedSet {
 public:
     unordered_set<int> st;
-    // srand(time(0));
-
+    
     RandomizedSet() {
         
     }
