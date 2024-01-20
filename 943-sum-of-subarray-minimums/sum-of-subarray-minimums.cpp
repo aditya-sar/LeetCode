@@ -15,7 +15,6 @@ public:
                 int right = i, left = stk.empty() ? -1 : stk.top();
                 long count = (mid - left) * (right - mid) % mod;
                 ans = (ans + (count * a[mid]) % mod) % mod;
-                // ans %= mod;
             }
             stk.push(i);
         }
