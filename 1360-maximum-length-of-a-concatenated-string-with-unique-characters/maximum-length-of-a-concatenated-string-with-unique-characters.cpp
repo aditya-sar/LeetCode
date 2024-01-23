@@ -1,4 +1,5 @@
 class Solution {
+public:
     int n;
 
     int solve(vector<string>& a, int pos, unordered_map<char, bool> mp){
@@ -16,7 +17,7 @@ class Solution {
         int take = sz + solve(a, pos+1, mp);
         return max(take, skip);
     }
-public:
+    
     int maxLength(vector<string>& a) {
         n = a.size();
         unordered_map<char, bool> mp;
