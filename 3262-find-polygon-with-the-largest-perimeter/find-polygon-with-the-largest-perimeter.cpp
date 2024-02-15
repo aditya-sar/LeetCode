@@ -10,7 +10,7 @@ public:
         stable_sort(nums.begin(), nums.end());
         sum = nums[0] + nums[1];
         for(int i=2; i<n; i++) {
-            if(sum > nums[i]) {
+            if(nums[i] < sum) {
                 ans = sum + nums[i];
             }
             sum += nums[i];
