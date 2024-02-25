@@ -5,7 +5,7 @@ public:
     unordered_set<int> solve(int n) {
         unordered_set<int> factors;
         for(int i=2; i<= sqrt(n); i++) {
-            while(n%i == 0){
+            while(n%i == 0) {
                 factors.insert(i);
                 n /= i;
             }
@@ -18,26 +18,26 @@ public:
 
     void dfs(int i, unordered_set<int>& vis, vector<vector<int>>& adjList) {
         vis.insert(i);
-        for(int node: adjList[i]){
+        for(int node: adjList[i]) {
             if(vis.find(node) == vis.end()) {
                 dfs(node, vis, adjList);
             }
         }
     }
 
-    bool canTraverseAllPairs(vector<int>& nums) {
+    bool canTraverseAllPairs(vector<int> &nums) {
         n = nums.size();
         vector<vector<int>> adjList(n);
         unordered_map<int, int> mp;
-        for(int i=0; i<nums.size(); i++){
-            unordered_set<int> primeFactors = solve(nums[i]);
-            for(int factor: primeFactors){
-                if(mp.find(factor) != mp.end()){
-                    int prevIndex = mp[factor];
-                    adjList[prevIndex].push_back(i);
-                    adjList[i].push_back(prevIndex);
+        for(int i=0; i<nums.size(); i++) {
+            unordered_set<int> pf = solve(nums[i]);
+            for(int x : pf){
+                if(mp.find(x) != mp.end()) {
+                    int prev = mp[x];
+                    adjList[prev].push_back(i);
+                    adjList[i].push_back(prev);
                 }
-                mp[factor] = i;
+                mp[x] = i;
             }
         }
         unordered_set<int> vis;
