@@ -3,29 +3,27 @@ public:
     bool isEvenOddTree(TreeNode* root) {
         queue<TreeNode*> q;
         q.push(root);
-        TreeNode* curr = root;
         bool even = true;
         while(!q.empty()) {
             int sz = q.size();
-            int prev = INT_MAX;
-            if(even) prev = INT_MIN;
+            int prev = even ? INT_MIN : INT_MAX;
             for(int i=0; i<sz; i++) {
-                curr = q.front();
+                TreeNode *node = q.front();
                 q.pop();
-                if(even && (curr->val % 2 == 0 || curr->val <= prev)) {
+                if(even && (node->val % 2 == 0 || node->val <= prev)) {
                     return false;
                 }
                 if(!even) {
-                    if(curr->val % 2 != 0 || curr->val >= prev) {
+                    if(node->val % 2 != 0 || node->val >= prev) {
                         return false;
                     }
                 }
-                prev = curr->val;
-                if(curr->left) {
-                    q.push(curr->left);
+                prev = node->val;
+                if(node->left) {
+                    q.push(node->left);
                 }
-                if(curr->right) {
-                    q.push(curr->right);
+                if(node->right) {
+                    q.push(node->right);
                 }
             }
             even = !even;
