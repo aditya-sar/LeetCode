@@ -14,10 +14,10 @@ public:
                 mp[c] = 0;
             }
         }
-        for(char c = 'a'; c <= 'z'; c++) {
-            if(mp[c]) {
-                while(mp[c]--) {
-                    ans.push_back(c);
+        for(char let = 'a'; let <= 'z'; let++) {
+            if(mp[let]) {
+                while(mp[let]--) {
+                    ans.push_back(let);
                 }
             }
         }
